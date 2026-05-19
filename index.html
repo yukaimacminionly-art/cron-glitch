@@ -1,108 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-TW"><head><meta charset="UTF-8">
 <title>cron_glitch — Dashboard</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-  :root { --bg:#f7f8fc; --card:#fff; --text:#1a1a2e; --sub:#667aa6; --ok:#1a936f; --warn:#f2ac36; --err:#c92a2a; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; padding:20px; font-size:15px; }
-  h1 { font-size:22px; margin-bottom:4px; }
-  .sub { color:var(--sub); font-size:13px; margin-bottom:24px; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-  @media(max-width:640px) { .grid { grid-template-columns:1fr; } }
-  .card { background:var(--card); border-radius:12px; padding:20px; box-shadow:0 1px 4px rgba(0,0,0,.08); }
-  .card h2 { font-size:15px; color:var(--sub); text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; }
-  table { width:100%; border-collapse:collapse; }
-  td { padding:8px 10px; border-bottom:1px solid #eef0f6; vertical-align:top; }
-  .name { font-weight:500; }
-  .mono { color:var(--sub); font-size:13px; }
-  .badge-ok { color:var(--ok); font-weight:600; }
-  .badge-warn { color:var(--warn); font-weight:600; }
-  .badge-err { color:var(--err); font-weight:600; }
-  .ok { color:var(--ok); font-weight:600; }
-  .warning { color:var(--warn); font-weight:600; }
-  pre { background:#1a1a2e; color:#e5e5e5; border-radius:8px; padding:16px; font-size:12px; overflow-x:auto; white-space:pre-wrap; }
-  .auto-refresh { font-size:12px; color:var(--sub); }
+:root{--bg:#f7f8fc;--card:#fff;--text:#1a1a2e;--sub:#667aa6;--ok:#1a936f;--warn:#f2ac36;--err:#c92a2a;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:20px;font-size:15px;}
+h1{font-size:22px;margin-bottom:4px;}.sub{color:var(--sub);font-size:13px;margin-bottom:24px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:640px){.grid{grid-template-columns:1fr;}}
+.card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.card h2{font-size:15px;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
+table{width:100%;border-collapse:collapse;}
+td{padding:8px 10px;border-bottom:1px solid #eef0f6;vertical-align:top;}
+.name{font-weight:500;}.mono{color:var(--sub);font-size:13px;}
+pre{background:#1a1a2e;color:#e5e5e5;border-radius:8px;padding:16px;font-size:12px;overflow-x:auto;white-space:pre-wrap;}
+.auto-refresh{font-size:12px;color:var(--sub);}
 </style><body>
 <h1>⏰ cron_glitch</h1>
-<p class="sub">Cron job dashboard · generated 2026-05-19 22:05</p>
-
+<p class="sub">Cron job dashboard · generated 2026-05-19 22:38</p>
 <div class="grid">
   <div class="card">
     <h2>Jobs (9 total)</h2>
-    <table>
-      <tr><th>Name</th><th>Schedule</th><th>Last Run</th><th>Status</th></tr>
-      
-        <tr>
-          <td class="name">Binance 強勢幣種掃描</td>
-          <td class="mono">0 19 * * *</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-        <tr>
-          <td class="name">MLB 盯盤 (智慧間隔)</td>
-          <td class="mono">*/5 * * * *</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-        <tr>
-          <td class="name">每週清理 .hermes 快取檔案</td>
-          <td class="mono">0 3 * * 0</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-        <tr>
-          <td class="name">台灣旅美球員每日表現日報</td>
-          <td class="mono">30 11 * * *</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-        <tr>
-          <td class="name">PTT Baseball monitor</td>
-          <td class="mono">*/2 * * * *</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-        <tr>
-          <td class="name">台股強勢動能掃描</td>
-          <td class="mono">0 19 * * 1-5</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-        <tr>
-          <td class="name">PTT Stock 板作者監控</td>
-          <td class="mono">*/30 * * * *</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-        <tr>
-          <td class="name">PTT Drama-Ticket 板監控</td>
-          <td class="mono">* * * * *</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-        <tr>
-          <td class="name">switchbot-environment-monitor</td>
-          <td class="mono">*/15 * * * *</td>
-          <td class="mono">?</td>
-          <td><span class="badge-ok">ok</span></td>
-        </tr>
-    </table>
+    <table><tr><th>Name</th><th>Schedule</th><th>Last Run</th></tr>
+    <tr><td class='name'>Binance 強勢幣種掃描</td><td class='mono'>0 19 * * *</td><td class='mono'>?</td></tr>
+<tr><td class='name'>MLB 盯盤 (智慧間隔)</td><td class='mono'>*/5 * * * *</td><td class='mono'>?</td></tr>
+<tr><td class='name'>每週清理 .hermes 快取檔案</td><td class='mono'>0 3 * * 0</td><td class='mono'>?</td></tr>
+<tr><td class='name'>台灣旅美球員每日表現日報</td><td class='mono'>30 11 * * *</td><td class='mono'>?</td></tr>
+<tr><td class='name'>PTT Baseball monitor</td><td class='mono'>*/2 * * * *</td><td class='mono'>?</td></tr>
+<tr><td class='name'>台股強勢動能掃描</td><td class='mono'>0 19 * * 1-5</td><td class='mono'>?</td></tr>
+<tr><td class='name'>PTT Stock 板作者監控</td><td class='mono'>*/30 * * * *</td><td class='mono'>?</td></tr>
+<tr><td class='name'>PTT Drama-Ticket 板監控</td><td class='mono'>* * * * *</td><td class='mono'>?</td></tr>
+<tr><td class='name'>switchbot-environment-monitor</td><td class='mono'>*/15 * * * *</td><td class='mono'>?</td></tr>
+</table>
     <p class="auto-refresh">← refresh every 5 min</p>
   </div>
-
   <div class="card">
     <h2>Health Snapshot</h2>
-    <p class="ok">✅  all cron jobs are green</p>
-    <h3 style="margin-top:16px;font-size:13px;color:var(--sub);">cron_health_ping stdout</h3>
-    <pre>⏰ cron health | 05-19 22:05 | ✅9 🚨0 ⚠️0 ❓0
+    <pre>⏰ cron health | 05-19 22:38 | ✅9 🚨0 ⚠️0 ❓0
 
 📊 9 jobs：9 正常 / 0 逾期 / 0 從未 / 0 問題</pre>
   </div>
 </div>
-
-<script>
-  // auto-refresh every 5 min
-  setTimeout(function() { location.reload(); }, 300000);
-</script>
+<script>setTimeout(()=>location.reload(),300000);</script>
 </body></html>
